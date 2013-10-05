@@ -21,7 +21,9 @@
 <% }); %>
 <!-- run test -->
 <script>
+<% if (checkLeaks) { %>
 mocha.checkLeaks();
+<% } %>
 window.onload = function () {
   if (window.mochaPhantomJS) {
     mochaPhantomJS.run();
