@@ -15,6 +15,8 @@ module.exports = function (grunt) {
         var target = this.target,
             config = grunt.config(taskName)[target],
 
+            checkLeaks = (config.checkLeaks === false ? false : true),
+
             autoClean = config.autoClean || false,
 
             htmlPath = config.html || 'test/' + target + '.html',
@@ -44,6 +46,7 @@ module.exports = function (grunt) {
 
         var html = ejs.render(template, {
             title      : config.title || target,
+            checkLeaks : checkLeaks,
             cssPath    : path.relative(dirname, 'node_modules/mocha/mocha.css'),
             mochaPath  : path.relative(dirname, 'node_modules/mocha/mocha.js'),
             assertPath : path.relative(dirname, assertPath),
