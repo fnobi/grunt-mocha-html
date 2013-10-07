@@ -1,17 +1,15 @@
 {
   "name": "grunt-mocha-html",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "generate html for mocha browser test.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/fnobi/grunt-mocha-html.git"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "test",
+    "mocha"
   ],
   "author": "Fujisawa Shin",
   "license": "BSD",
@@ -19,5 +17,9 @@
   "gitHead": "91e598183f4be65191eba0edd8dbee00f3e573a0",
   "dependencies": {
     "ejs": "~0.8.4"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-release": "~0.6.0"
   }
 }
