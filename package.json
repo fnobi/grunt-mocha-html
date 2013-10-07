@@ -1,6 +1,6 @@
 {
   "name": "grunt-mocha-html",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "generate html for mocha browser test.",
   "repository": {
     "type": "git",
