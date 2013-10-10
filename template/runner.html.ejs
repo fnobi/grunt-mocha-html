@@ -8,13 +8,14 @@
 
 <div id="mocha"></div>
 
-<!-- js src -->
-<% srcPaths.forEach(function (path) {  %><script src="<%= path %>"></script>
-<% }); %>
 <!-- mocha and assert module -->
 <script src="<%= assertPath %>"></script>
 <script src="<%= mochaPath %>"></script>
 <script>mocha.setup('bdd')</script>
+
+<!-- js src -->
+<% srcPaths.forEach(function (path) {  %><script src="<%= path %>"></script>
+<% }); %>
 
 <!-- test codes -->
 <% testPaths.forEach(function (path) {  %><script src="<%= path %>"></script>
