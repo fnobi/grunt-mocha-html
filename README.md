@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                 assert : 'chai',
                 checkLeaks : false,
                 template: 'path/to/custom/template.html.ejs',
-                htmlPath: 'path/to/output/html.html'
+                html: 'path/to/output/html.html'
             }
         },
         mocha_phantomjs: {
