@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (grunt) {
     var path = require('path'),
         ejs  = require('ejs');
@@ -9,13 +11,13 @@ module.exports = function (grunt) {
         taskDir         = 'node_modules/grunt-mocha-html';
 
     grunt.file.defaultEncoding = 'utf8';
-    var template = grunt.file.read(path.join(taskDir, '/template/runner.html.ejs'));
 
     grunt.registerMultiTask(taskName, taskDescription, function () {
         var target = this.target,
+            template,
             config = grunt.config(taskName)[target],
 
-            checkLeaks = (config.checkLeaks === false ? false : true),
+            checkLeaks = config.checkLeaks !== false,
 
             autoClean = config.autoClean || false,
 
@@ -36,6 +38,11 @@ module.exports = function (grunt) {
                     return grunt.file.expand(pattern);
                 }
             )) : [];
+
+        if (config.template && !grunt.file.exists(config.template)) {
+            throw new Error('invalid template path.');
+        }
+        template = grunt.file.read(config.template || path.join(taskDir, '/template/runner.html.ejs'));
 
         if (!htmlPath) {
             throw new Error('invalid html path.');
