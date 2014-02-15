@@ -15,7 +15,9 @@ module.exports = function(grunt) {
                 src   : [ 'js/lib/*.js', 'js/*.js' ],
                 test  : [ 'test/*-test.js' ],
                 assert : 'chai',
-                checkLeaks : false
+                checkLeaks : false,
+                template: 'path/to/custom/template.html.ejs',
+                html: 'path/to/output/html.html'
             }
         },
         mocha_phantomjs: {
